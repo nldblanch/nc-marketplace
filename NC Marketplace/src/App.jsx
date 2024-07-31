@@ -1,28 +1,30 @@
-
-import { Route, Routes } from 'react-router-dom'
-import './App.css'
-import { HomePage } from './components/HomePage'
-import {ProfilePage} from "./components/ProfilePage"
-import {SellItemPage} from "./components/SellItemPage"
-import {ItemRouter} from "./routers/ItemRouter"
-
-import { Navbar } from './components/Navbar'
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import { HomePage } from "./components/pages/HomePage";
+import { ProfilePage } from "./components/pages/ProfilePage";
+import { SellItemPage } from "./components/pages/SellItemPage";
+import { ItemRouter } from "./routers/ItemRouter";
+import { ShortcutsPage } from "./components/pages/ShortcutsPage";
+import { Navbar } from "./components/Navbar";
+import { BasketPage } from "./components/pages/BasketPage";
+import { ListItemPage } from "./components/pages/ListItemPage";
 
 function App() {
-  
-
   return (
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/sell" element={<SellItemPage />} />
+        <Route path="/sell/list" element={<ListItemPage />} />
+        <Route path="/basket" element={<BasketPage />} />
+        <Route path="/shortcuts" element={<ShortcutsPage />} />
       </Routes>
-        <ItemRouter />
-        
+      <ItemRouter />
+
       <Navbar />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
