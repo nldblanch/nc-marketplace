@@ -7,9 +7,8 @@ import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import { useState } from "react";
-import "./css/Navbar.css"
+import "./css/Navbar.css";
 export const Navbar = () => {
- 
   const [value, setValue] = useState("home");
 
   const handleChange = (event, newValue) => {
@@ -25,8 +24,9 @@ export const Navbar = () => {
         onChange={handleChange}
       >
         <BottomNavigationAction
-        className="nav-element"
-        component={RouterLink} to="/"
+          className="nav-element"
+          component={RouterLink}
+          to="/"
           label="Home"
           value="home"
           icon={<RestoreIcon className="nav-icon" />}
@@ -34,30 +34,34 @@ export const Navbar = () => {
           {" "}
         </BottomNavigationAction>
         <BottomNavigationAction
-        className="nav-element"
-          component={RouterLink} to="/profile"
+          className="nav-element"
+          component={RouterLink}
+          to="/profile"
           label="Profile"
           value="profile"
           icon={<AccountCircleIcon className="nav-icon" />}
         />
 
         <BottomNavigationAction
-        className="nav-element"
-        component={RouterLink} to="/sell"
+          className="nav-element"
+          component={RouterLink}
+          to="/sell"
           label="Selling"
           value="selling"
           icon={<LocalOfferIcon className="nav-icon" />}
         />
         <BottomNavigationAction
-        className="nav-element"
-        component={RouterLink} to="/basket"
+          className="nav-element"
+          component={RouterLink}
+          to="/basket"
           label="Basket"
           value="basket"
           icon={<ShoppingBasketIcon className="nav-icon" />}
         />
         <BottomNavigationAction
-        className="nav-element"
-        component={RouterLink} to="/shortcuts"
+          className="nav-element"
+          component={RouterLink}
+          to="/shortcuts"
           label="Shortcuts"
           value="shortcuts"
           icon={<DensityMediumIcon className="nav-icon" />}
