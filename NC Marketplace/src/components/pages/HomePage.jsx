@@ -16,6 +16,7 @@ export const HomePage = () => {
       </header>
       <main>
         <div id="front-image-container"></div>
+        <h2>Top picks</h2>
         <section id="items-gallery">
           <div className="item"></div>
           <div className="item"></div>

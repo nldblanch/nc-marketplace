@@ -1,0 +1,31 @@
+main img {
+    width: 95dvw;
+    border-radius: 1rem;
+}
+
+h3 {
+    text-align: left;
+}
+
+p {
+    text-align: left;
+}
+
+#price {
+    font-weight: 700;
+}
+
+#listing, #price {
+    text-align: right;
+}
+
+#category, #listing {
+    font-size: .8em;
+}
+
+button {
+  width: 60dvw;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}

@@ -20,7 +20,7 @@ function App() {
         <Route path="/sell/list" element={<ListItemPage />} />
         <Route path="/basket" element={<BasketPage />} />
         <Route path="/shortcuts" element={<ShortcutsPage />} />
-        <Route path="*" element={<p>Path not resolved</p>} />
+        {/* <Route path="*" element={<p>Path not resolved</p>} /> */}
       </Routes>
       <Navbar />
     </>
