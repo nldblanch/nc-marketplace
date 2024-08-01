@@ -1,48 +1,68 @@
-import { Link } from "react-router-dom"
-import * as React from 'react'
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import FolderIcon from '@mui/icons-material/Folder';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-
+import { Link as RouterLink, MemoryRouter } from "react-router-dom";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import RestoreIcon from "@mui/icons-material/Restore";
+import DensityMediumIcon from "@mui/icons-material/DensityMedium";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import { useState } from "react";
+import "./css/Navbar.css"
 export const Navbar = () => {
-  return (
-    
-    <nav>
-        <Link to="/">Home</Link>
-        <Link to="/items">Items</Link>
-        <Link to="/sell">Sell</Link>
-        <Link to="/items/1">Item</Link>
-        <Link to="/basket">Basket</Link>
-        <Link to="/shortcuts">Shortcuts</Link>        
-    </nav>
-  )
-  const [value, setValue] = React.useState('recents');
+ 
+  const [value, setValue] = useState("home");
 
-    const handleChange = (event, newValue) => {
-      setValue(newValue);
-    };
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   return (
-    <BottomNavigation sx={{ width: 500 }} value={value} onChange={handleChange}>
-      <BottomNavigationAction
-        label="Recents"
-        value="recents"
-        icon={<RestoreIcon />}
-      />
-      <BottomNavigationAction
-        label="Favorites"
-        value="favorites"
-        icon={<FavoriteIcon />}
-      />
-      <BottomNavigationAction
-        label="Nearby"
-        value="nearby"
-        icon={<LocationOnIcon />}
-      />
-      <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
-    </BottomNavigation>
+    <>
+      <BottomNavigation
+        id="nav-bar"
+        showLabels
+        sx={{ width: 500 }}
+        value={value}
+        onChange={handleChange}
+      >
+        <BottomNavigationAction
+        className="nav-element"
+        component={RouterLink} to="/"
+          label="Home"
+          value="home"
+          icon={<RestoreIcon className="nav-icon" />}
+        >
+          {" "}
+        </BottomNavigationAction>
+        <BottomNavigationAction
+        className="nav-element"
+          component={RouterLink} to="/profile"
+          label="Profile"
+          value="profile"
+          icon={<AccountCircleIcon className="nav-icon" />}
+        />
+
+        <BottomNavigationAction
+        className="nav-element"
+        component={RouterLink} to="/sell"
+          label="Selling"
+          value="selling"
+          icon={<LocalOfferIcon className="nav-icon" />}
+        />
+        <BottomNavigationAction
+        className="nav-element"
+        component={RouterLink} to="/basket"
+          label="Basket"
+          value="basket"
+          icon={<ShoppingBasketIcon className="nav-icon" />}
+        />
+        <BottomNavigationAction
+        className="nav-element"
+        component={RouterLink} to="/shortcuts"
+          label="Shortcuts"
+          value="shortcuts"
+          icon={<DensityMediumIcon className="nav-icon" />}
+        />
+      </BottomNavigation>
+    </>
   );
-}
-
+};
