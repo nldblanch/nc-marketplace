@@ -1,8 +1,8 @@
-import { Link as RouterLink, MemoryRouter } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import RestoreIcon from "@mui/icons-material/Restore";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
@@ -14,6 +14,9 @@ export const Navbar = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+
+
   return (
     <>
       <BottomNavigation
@@ -30,9 +33,7 @@ export const Navbar = () => {
           label="Home"
           value="home"
           icon={<RestoreIcon className="nav-icon" />}
-        >
-          {" "}
-        </BottomNavigationAction>
+        />
         <BottomNavigationAction
           className="nav-element"
           component={RouterLink}
