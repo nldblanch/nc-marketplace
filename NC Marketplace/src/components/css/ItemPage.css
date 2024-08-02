@@ -1,6 +1,8 @@
 main img {
     width: 95dvw;
     border-radius: 1rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 
 h3 {
