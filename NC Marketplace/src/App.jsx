@@ -8,6 +8,7 @@ import { Navbar } from "./components/Navbar";
 import { BasketPage } from "./components/pages/BasketPage";
 import { ListItemPage } from "./components/pages/ListItemPage";
 import "./App.css";
+import { Signup } from "./components/pages/Signup";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
         <Route path="/sell/list" element={<ListItemPage />} />
         <Route path="/basket" element={<BasketPage />} />
         <Route path="/shortcuts" element={<ShortcutsPage />} />
-        <Route path="/users/:username" element={<ShortcutsPage />}/>
+        <Route path="/users/:username" element={<ShortcutsPage />} />
+        <Route path="/users/signup" element={<Signup />} />
         {/* <Route path="*" element={<p>Path not resolved</p>} /> */}
       </Routes>
       <Navbar />
