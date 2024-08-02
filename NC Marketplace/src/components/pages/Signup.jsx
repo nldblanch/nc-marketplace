@@ -1,9 +1,24 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../../contexts/User";
+import { postNewUser } from "../../api";
 
 export const Signup = () => {
+  const [username, setUsername] = useState("");
+  const navigate = useNavigate()
+  const { setLoggedInUser } = useContext(UserContext);
+
+  const handleChange = (event) => {
+    setUsername(event.target.value);
+  };
+
   const signup = (event) => {
     event.preventDefault();
-    setLoggedInUser(username);
+    postNewUser(username)
+    .then(() => {
+      setLoggedInUser(username);
+      navigate("/profile")
+    })
   };
 
   return (
@@ -17,6 +32,7 @@ export const Signup = () => {
           type="text"
           name="username"
           placeholder="username"
+          onChange={handleChange}
           required
         ></input>
 
@@ -47,7 +63,7 @@ export const Signup = () => {
         <button type="submit">Signup</button>
       </form>
 
-      <h3>Already got an account?</h3>
+      <h3 id="existing-user-login-label">Already got an account?</h3>
       <Link to="/profile">
         <button>Login</button>
       </Link>

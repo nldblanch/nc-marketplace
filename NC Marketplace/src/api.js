@@ -34,3 +34,21 @@ export const getUsers = () => {
     return data.users
   })
 }
+
+export const getUserByUsername = (username) => {
+  return apiClient
+  .get(`/users/${username}`)
+  .then(({data}) => {
+    return data.user
+  })
+}
+
+export const postNewUser = (username) => {
+  console.log(username);
+  
+  return apiClient
+  .post(`/users`, {username})
+  .then(({data}) => {
+    return data.user
+  })
+}

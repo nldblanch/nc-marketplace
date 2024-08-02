@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts/User";
 import { Link } from "react-router-dom";
-import "../css/Login.css"
+import "../css/Login.css";
 export const Login = () => {
   const [username, setUsername] = useState("");
   const { setLoggedInUser } = useContext(UserContext);
@@ -11,7 +11,6 @@ export const Login = () => {
   };
   const login = (event) => {
     event.preventDefault();
-
     setLoggedInUser(username);
   };
 
@@ -20,7 +19,9 @@ export const Login = () => {
       <h1>Login</h1>
       <h2>Welcome back!</h2>
       <form onSubmit={login}>
-        <label htmlFor="username">Username <span>*</span></label>
+        <label htmlFor="username">
+          Username <span>*</span>
+        </label>
         <input
           id="username"
           type="text"
@@ -30,7 +31,9 @@ export const Login = () => {
           onChange={handleChange}
           required
         ></input>
-        <label htmlFor="password">Password <span>*</span></label>
+        <label htmlFor="password">
+          Password <span>*</span>
+        </label>
         <input
           id="password"
           name="password"
@@ -41,7 +44,7 @@ export const Login = () => {
         <button type="submit">Login</button>
       </form>
 
-      <h3>New to us?</h3>
+      <h3 id="new-user-signup-label">New to us?</h3>
       <Link to="/users/signup">
         <button>Sign up</button>
       </Link>
