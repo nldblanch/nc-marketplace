@@ -1,11 +1,37 @@
 .item-card {
+    margin: 1rem 0;
     border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    width: 95dvw;
+    color: black;
+    text-align: left;
+    max-height: 20dvh;
 }
 
 .item-card img {
-    max-width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    max-width: 40%;
+    
 }
 
-section {
-
+.item-card section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 0.5rem;
 }
+
+.item-card h4 {
+    overflow: hidden;
+}
+
+.item-card span {
+    color: rgb(11, 11, 179)
+}
+
+/* .item-card *:link, .item-card *:visited {
+    text-decoration: none;
+} */
