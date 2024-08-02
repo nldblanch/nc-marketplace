@@ -1,3 +1,11 @@
 #searchbar {
-    background-color: rgba(255, 0, 0, 0.586);
+    background-color: rgb(17, 207, 156);
+    border-radius: 25px;
+    padding: 0.5rem 2rem;
+}
+#searchbar input {
+    font-size: 2rem;
+    background-color: rgb(17, 207, 156);
+    width: 100%;
+    color: black;
 }

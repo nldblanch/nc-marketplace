@@ -1,28 +1,42 @@
 
 
 #categories-container {
+    margin-top: 0.5rem;
     background-color: rgba(0, 0, 255, 0.627);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.5rem;
 }
 #front-image-container {
     display: block;
-    height: 200px;
-    background-color: rgba(255, 255, 0, 0.666);
+    width: 96dvw;
+    aspect-ratio: 1.5/1;
+}
+#front-image-container img {
+    width: 100%;
 }
 
 #items-gallery {
     height: 100px;
-    background-color: red;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    
+    align-items: center;  
 }
 
-.item {
+.item-container {
     display: block;
     aspect-ratio: 1/1;
     outline: 1px solid black;
     flex-grow: 1;
     overflow: hidden;
+    width: 33%;
+    
+}
+.item {
+    width: 100%;
 }
 
+#home-page h2 {
+    text-align: left;
+    margin-bottom: 1rem;
+}

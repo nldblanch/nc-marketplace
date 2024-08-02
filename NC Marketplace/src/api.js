@@ -7,7 +7,7 @@ const apiClient = axios.create({
 
 
 export const getItems = (searchTerm) => {
-    return apiClient.get(`/items?search=${searchTerm}`)
+    return apiClient.get(`/items`, {params: {search: searchTerm}})
     .then(({data}) => {
       return data.items
     })
@@ -16,6 +16,8 @@ export const getItems = (searchTerm) => {
     });
   
 }
+
+
 
 export const getItemById = (id) => {
     return apiClient.get(`/items/${id}`)

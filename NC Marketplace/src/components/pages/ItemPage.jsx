@@ -25,7 +25,7 @@ export const ItemPage = () => {
     );
 
   return (
-    <main>
+    <main id="item-page">
       <img src={item.img_url}></img>
       <section>
         <h3>{item.item_name}</h3>

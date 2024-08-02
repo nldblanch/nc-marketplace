@@ -14,7 +14,7 @@ export const Search = () => {
     return (
     <>
         <form id="searchbar" onKeyDown={handleKeyDown}>
-            <input type="text" name="search" placeholder="hello"></input>
+            <input type="text" name="search" placeholder="Search"></input>
         </form>
     </>
   )
