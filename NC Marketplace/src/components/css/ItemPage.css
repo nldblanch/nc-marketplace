@@ -31,3 +31,6 @@ button {
   padding: 1rem;
   border-radius: 1rem;
 }
+#profile-link {
+    color: rgb(11, 11, 179);
+}

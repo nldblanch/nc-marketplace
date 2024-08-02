@@ -1,4 +1,6 @@
-
+h1 {
+    font-size: 100%;
+}
 
 #categories-container {
     margin-top: 0.5rem;
