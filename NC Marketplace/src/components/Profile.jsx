@@ -1,36 +1,31 @@
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/User";
-import { getUserByUsername } from "../api";
-import EditIcon from "@mui/icons-material/Edit";
 
-export const Profile = ({userDetails, setUserDetails}) => {
-    const { loggedInUser } = useContext(UserContext);
-    const [isLoading, setIsLoading] = useState(true);
+import { UpdateUser } from "./UpdateUser";
+import { ProfileBanner } from "./ProfileBanner";
 
-    useEffect(() => {
-        setIsLoading(true);
-        getUserByUsername(loggedInUser).then((user) => {
-          setUserDetails(user);
-          setIsLoading(false);
-        });
-      }, []);
-    
-    if (isLoading) return <h1>Loading</h1>;
-    return (
+export const Profile = ({ userDetails, setUserDetails }) => {
+  const { loggedInUser } = useContext(UserContext);
+
+  const [isUpdatingUser, setIsUpdatingUser] = useState(false);
+
+  return (
+    <>
+      <h1>Hi {loggedInUser}!</h1>
+      {isUpdatingUser ? (
+        <UpdateUser
+          userDetails={userDetails}
+          setIsUpdatingUser={setIsUpdatingUser}
+        />
+      ) : (
         <>
-          <h1>Hi {loggedInUser}!</h1>
-          <header id="profile-banner">
-            <div id="avatar-container">
-              <img src={userDetails.avatar_url}></img>
-            </div>
-            <section id="profile-details">
-              <div>
-                <h2>{userDetails.username}</h2>
-                <p>Kudos: {userDetails.kudos}</p>
-              </div>
-              <EditIcon id="edit-picture-icon" />
-            </section>
-          </header>
+          <ProfileBanner
+            userDetails={userDetails}
+            setUserDetails={setUserDetails}
+            setIsUpdatingUser={setIsUpdatingUser}
+          />
         </>
-      );
-}
+      )}
+    </>
+  );
+};

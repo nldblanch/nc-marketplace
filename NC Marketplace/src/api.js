@@ -44,10 +44,16 @@ export const getUserByUsername = (username) => {
 }
 
 export const postNewUser = (username) => {
-  console.log(username);
-  
   return apiClient
   .post(`/users`, {username})
+  .then(({data}) => {
+    return data.user
+  })
+}
+
+export const patchUser = (loggedInUser, {avatar_url, username, kudos_inc}) => {
+  return apiClient
+  .patch(`/users/${loggedInUser}`, {avatar_url, username})
   .then(({data}) => {
     return data.user
   })

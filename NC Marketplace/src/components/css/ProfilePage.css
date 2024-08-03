@@ -1,6 +1,8 @@
 #avatar-container {
     width: 40dvw;
+    height: 40dvw;
     aspect-ratio: 1/1;
+    
 }
 #profile-details {
     flex-grow: 1;
@@ -8,7 +10,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
 }
 
 #profile-details h2 {
@@ -21,14 +22,16 @@
     border: 1px solid black;
     border-radius: 10px;
     padding: 0.5rem;
-    padding-top: 1rem;
+    height: calc(40dvw + 1rem)
 }
 #avatar-container img {
     border: 1px solid green;
-    height: 100%;
+    width: 100%;
     aspect-ratio: 1/1;
     border-radius: 100%;
+    
 }
 #edit-picture-icon {
     align-self: flex-end;
 }
+

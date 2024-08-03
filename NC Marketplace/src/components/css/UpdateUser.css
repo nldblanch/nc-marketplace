@@ -1,0 +1,26 @@
+button {
+    text-align: center;
+    padding: 0;
+}
+
+#update-user {
+    flex-grow: 1;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+#update-user form {
+    border: none;
+}
+
+#update-user button {
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem 1.5rem;
+}
