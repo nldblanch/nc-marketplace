@@ -1,15 +1,20 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts/User";
 import { Login } from "./Login";
 
+import "../css/ProfilePage.css";
+import { Profile } from "../Profile";
+
 export const ProfilePage = () => {
   const { loggedInUser } = useContext(UserContext);
+  const [userDetails, setUserDetails] = useState([]);
 
-  return !loggedInUser ? (
-    <Login />
-  ) : (
-    <>
-      <h1>hello {loggedInUser}</h1>
-    </>
-  );
+  if (!loggedInUser) return <Login setUserDetails={setUserDetails} />;
+  else {
+    return (
+      <>
+        <Profile userDetails={userDetails} setUserDetails={setUserDetails} />
+      </>
+    );
+  }
 };

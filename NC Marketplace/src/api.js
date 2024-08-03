@@ -34,3 +34,27 @@ export const getUsers = () => {
     return data.users
   })
 }
+
+export const getUserByUsername = (username) => {
+  return apiClient
+  .get(`/users/${username}`)
+  .then(({data}) => {
+    return data.user
+  })
+}
+
+export const postNewUser = (username) => {
+  return apiClient
+  .post(`/users`, {username})
+  .then(({data}) => {
+    return data.user
+  })
+}
+
+export const patchUser = (loggedInUser, {avatar_url, username, kudos_inc}) => {
+  return apiClient
+  .patch(`/users/${loggedInUser}`, {avatar_url, username})
+  .then(({data}) => {
+    return data.user
+  })
+}

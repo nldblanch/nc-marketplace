@@ -1,0 +1,37 @@
+#avatar-container {
+    width: 40dvw;
+    height: 40dvw;
+    aspect-ratio: 1/1;
+    
+}
+#profile-details {
+    flex-grow: 1;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#profile-details h2 {
+    text-align: left;
+}
+#profile-banner {
+    display: flex;
+    width: 95dvw;
+    margin-top: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0.5rem;
+    height: calc(40dvw + 1rem)
+}
+#avatar-container img {
+    border: 1px solid green;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    
+}
+#edit-picture-icon {
+    align-self: flex-end;
+}
+
