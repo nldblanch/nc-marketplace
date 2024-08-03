@@ -7,11 +7,11 @@ export const ListItemPage = () => {
     const item_name = event.target[0].value
     const description = event.target[1].value
     const img_url = event.target[2].value
-    const price = event.target[3].value.split(".").join("")
+    const price = String(Number(event.target[3].value) * 100).split(".").join("")
     const category_name = event.target[4].value
     postItem({item: {item_name, description, img_url, price, category_name, listed_by: 17}})
     .then((item) => {
-      console.log(item)
+      console.log("success!", item)
     })
   }
   
