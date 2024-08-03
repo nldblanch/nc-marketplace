@@ -58,3 +58,13 @@ export const patchUser = (loggedInUser, {avatar_url, username, kudos_inc}) => {
     return data.user
   })
 }
+export const postItem = ({item}) => {
+  return apiClient
+  .post(`/items`, item)
+  .then(({data}) => {
+    return data.item
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+}
